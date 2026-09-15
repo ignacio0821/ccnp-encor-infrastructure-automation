@@ -1,0 +1,37 @@
+# ==========================================
+# Python Virtual Environments & Dependencies
+# ==========================================
+.venv/
+venv/
+ENV/
+env/
+lib/
+lib64/
+
+# ==========================================
+# Python Core & Cache Artifacts
+# ==========================================
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+
+# ==========================================
+# Integrated Development Environments (IDEs)
+# ==========================================
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# ==========================================
+# Network Automation Deployment Security
+# ==========================================
+# Old Rule: remediation.yaml (Only checks the root folder)
+
+# New Rule: Explicit path tracking to catch the nested file
+CCNP/ENCOR/MTU/remediation.yaml
+*.secret
+*.creds
+

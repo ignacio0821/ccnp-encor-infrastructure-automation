@@ -1,0 +1,27 @@
+# Automated Control-Plane Remediation Engine (OSPF MTU Mismatch)
+
+## 📌 Architectural Overview
+This repository contains a self-healing infrastructure automation engine built to detect and remediate protocol-stalling state conflicts at Layer 3. Specifically, it resolves asymmetric Maximum Transmission Unit (MTU) mismatches that trap Cisco Open Shortest Path First (OSPF) adjacencies in the `EXSTART`/`EXCHANGE` negotiation loop.
+
+The script automates state collection by pulling active router configurations using secure, cryptographically adapted SSH tunnels. It then reviews terminal tables using conditional text parsing algorithms and triggers targeted configuration modifications via transactional atomic merging.
+
+## 🛠️ Core Technology Stack
+*   **Automation Platform:** NAPALM (Network Automation and Programmability Abstraction Layer with Multi-OS support)
+*   **Underlying Drivers:** Netmiko / Paramiko SSH Transport Core
+*   **Data Serialization:** YAML v1.2 (Decoupled environment configuration)
+*   **Lab Infrastructure:** Cisco Modeling Labs (CML) / Cisco IOS
+
+## 🚀 Environment Initialization
+
+### 1. Provision the Python Workspace
+```bash
+python -m venv .venv
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+```
+
+### 2. Deploy the Remediation Script
+Ensure your local `remediation.yaml` matches your target router's management parameters, then run:
+```bash
+python remediate_mtu.py
+```
