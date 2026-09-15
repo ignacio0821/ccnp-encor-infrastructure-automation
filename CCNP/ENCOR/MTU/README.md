@@ -1,5 +1,14 @@
 # Automated Control-Plane Remediation Engine (OSPF MTU Mismatch)
 
+# ⚠️ STATUS: ACTIVE ENGINEERING SPRINT — WORK IN PROGRESS (WIP)
+> *This repository serves as a live, evolving laboratory log notebook documenting model-driven telemetry, automated protocol remediation scripts, and infrastructure-as-code patterns for enterprise routing architectures.*
+
+---
+
+# Automated Control-Plane Remediation Engine (OSPF MTU Mismatch)
+
+
+
 ## 📌 Architectural Overview
 This repository contains a self-healing infrastructure automation engine built to detect and remediate protocol-stalling state conflicts at Layer 3. Specifically, it resolves asymmetric Maximum Transmission Unit (MTU) mismatches that trap Cisco Open Shortest Path First (OSPF) adjacencies in the `EXSTART`/`EXCHANGE` negotiation loop.
 
