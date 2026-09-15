@@ -26,23 +26,7 @@
 # Nbr 2.2.2.2 on GigabithEthernet0/0 EXSTART to DOWN, Neighbor to DOWN: Too many retransmissions
 
 
-# Pull live operational telemetry using the generic CLI method
-print("[*] Retrieving active OSPF neighbor tables via CLI extraction...")
 
-# Passes the raw command to the router; returns a dictionary keyed by the command string
-cli_output = device.cli(["show ip ospf neighbor"])
-ospf_table = cli_output.get("show ip ospf neighbor", "")
-
-print("\n--- LIVE OSPF TABLE CONSOLE TEXT ---")
-print(ospf_table)
-print("------------------------------------\n")
-
-chaos_detected = False
-
-# Parse the raw text data directly for protocol state markers
-if "EXSTART" in ospf_table.upper() or "EXCHANGE" in ospf_table.upper():
-    print("[🚨 CHAOS DETECTED] Control plane lock found inside the CLI output strings!")
-    chaos_detected = True
 
 
 
