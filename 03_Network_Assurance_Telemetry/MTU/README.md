@@ -20,17 +20,3 @@ The script automates state collection by pulling active router configurations us
 *   **Data Serialization:** YAML v1.2 (Decoupled environment configuration)
 *   **Lab Infrastructure:** Cisco Modeling Labs (CML) / Cisco IOS
 
-## 🚀 Environment Initialization
-
-### 1. Provision the Python Workspace
-```bash
-python -m venv .venv
-source .venv/bin/activate  # On Windows: .venv\Scripts\activate
-pip install -r requirements.txt
-```
-
-### 2. Deploy the Remediation Script
-Ensure your local `remediation.yaml` matches your target router's management parameters, then run:
-```bash
-python remediate_mtu.py
-```

@@ -31,7 +31,7 @@ __pycache__/
 # Old Rule: remediation.yaml (Only checks the root folder)
 
 # New Rule: Explicit path tracking to catch the nested file
-CCNP/ENCOR/MTU/remediation.yaml
+03_Network_Assurance_Telemetry/MTU/remediation.yaml
 *.secret
 *.creds
 

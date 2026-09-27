@@ -1,22 +1,15 @@
-# Automated Control-Plane Remediation Engine (OSPF MTU Mismatch)
+# CCNP Enterprise Architecture & Automation Portfolio
 
-# STATUS: ACTIVE ENGINEERING SPRINT — WORK IN PROGRESS (WIP)
-> *This repository serves as a live laboratory log notebook documenting model-driven telemetry, automated protocol remediation scripts, and infrastructure-as-code patterns.*
+https://github.com/ignacio0821/ccnp-encor-infrastructure-automation
 
----
+## 📌 Overview
+A production-grade engineering repository documenting core network infrastructure validation, deep programmatic routing configurations, and closed-loop automation state verification engines aligned directly with the Cisco CCNP ENCOR (350-401) blueprint matrix.
 
-# Automated Control-Plane Remediation Engine (OSPF MTU Mismatch)
+## 📂 Repository Architecture
+* **01_Architecture_Virtualization/** - Enterprise fabric architectures, virtualization models, and programmatic infrastructure blueprints.
+* **02_Infrastructure_Layer2_Layer3/** - Multi-area OSPFv3 address families, Named-Mode EIGRP, and Multi-Protocol BGP routing fabrics.
+* **03_Network_Assurance_Telemetry/** - Wire capture analysis, real-time telemetry streaming, syslog audit metrics, and transport loop debug scraping.
+* **04_Security_Automation_Remediation/** - Automated AAA configuration, hardened device lines, and programmatic self-healing scripts leveraging the NAPALM automation framework.
 
-## Architectural Overview
-This repository contains a self-healing infrastructure automation engine...
-
-This repository contains a self-healing infrastructure automation engine built to detect and remediate protocol-stalling state conflicts at Layer 3. Specifically, it resolves asymmetric Maximum Transmission Unit (MTU) mismatches that trap Cisco Open Shortest Path First (OSPF) adjacencies in the `EXSTART`/`EXCHANGE` negotiation loop.
-
-The script automates state collection by pulling active router configurations using secure, cryptographically adapted SSH tunnels. It then reviews terminal tables using conditional text parsing algorithms and triggers targeted configuration modifications via transactional atomic merging.
-
-## 🛠️ Core Technology Stack
-*   **Automation Platform:** NAPALM (Network Automation and Programmability Abstraction Layer with Multi-OS support)
-*   **Underlying Drivers:** Netmiko / Paramiko SSH Transport Core
-*   **Data Serialization:** YAML v1.2 (Decoupled environment configuration)
-*   **Lab Infrastructure:** Cisco Modeling Labs (CML) / Cisco IOS
-
+## 🛠️ Automated CI/CD
+This repository utilizes a localized **GitHub Actions CI/CD Pipeline** to enforce strict code formatting and PEP 8 compliance checks across all automation modules using Black.
