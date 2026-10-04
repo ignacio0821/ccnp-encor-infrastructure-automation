@@ -1,15 +1,37 @@
-# CCNP Enterprise Architecture & Automation Portfolio
+# 🛰️ CCNP ENCOR Flagship Automation & Closed-Loop Remediation Matrix
 
-https://github.com/ignacio0821/ccnp-encor-infrastructure-automation
+An enterprise-grade data center transit backbone built within Cisco Modeling Labs (CML), automated natively over secure management vectors using multi-layer Python programmatic frameworks.
 
-## 📌 Overview
-A production-grade engineering repository documenting core network infrastructure validation, deep programmatic routing configurations, and closed-loop automation state verification engines aligned directly with the Cisco CCNP ENCOR (350-401) blueprint matrix.
+## 🗂️ Core Workspace Architecture
 
-## 📂 Repository Architecture
-* **01_Architecture_Virtualization/** - Enterprise fabric architectures, virtualization models, and programmatic infrastructure blueprints.
-* **02_Infrastructure_Layer2_Layer3/** - Multi-area OSPFv3 address families, Named-Mode EIGRP, and Multi-Protocol BGP routing fabrics.
-* **03_Network_Assurance_Telemetry/** - Wire capture analysis, real-time telemetry streaming, syslog audit metrics, and transport loop debug scraping.
-* **04_Security_Automation_Remediation/** - Automated AAA configuration, hardened device lines, and programmatic self-healing scripts leveraging the NAPALM automation framework.
+| Engineering Directory | Operational Focus & Target Asset |
+| :--- | :--- |
+| **`00_Design_Blueprints_Pseudocode`** | Language-agnostic logic gates and automated self-healing flow charts. |
+| **`04_Security_Automation_Remediation`** | Idempotent Python scripts executing secure NAPALM configurations over SSH channels. |
+| **`Assets`** | Authoritative 20-Node dual-stack IPAM reference network document matrix sheet. |
 
-## 🛠️ Automated CI/CD
-This repository utilizes a localized **GitHub Actions CI/CD Pipeline** to enforce strict code formatting and PEP 8 compliance checks across all automation modules using Black.
+---
+
+## 💥 Chaos Engineering Objective: The OSPF MTU "Silent Killer"
+
+This infrastructure focuses on programmatically detecting and repairing **"Silent Killer" interface mismatches** that traditional monitoring tools frequently miss.
+
+### 🔬 The Failure Mechanism
+* **The Degradation:** A point-to-point transit link interface is forcefully restricted to an IP MTU of `1200` bytes.
+* **The Trap:** OSPF neighbors remain deceptively stable at `FULL` until a process clears or an interface flaps.
+* **The Protocol Loop:** Once memory resets, the routers get permanently trapped in the `EXSTART/EXCHANGE` loop, constantly retransmitting Database Description (DBD) packets (`ospf.type == 2`) that fail the path size limits.
+
+### 📐 Automated Remediation Logic Gate
+```text
+IF Router_Interface_MTU LESS THAN 1500 THEN
+    PRINT "[!] SILENT KILLER DRIFT DETECTED: OSPF Adjacency Is At Risk!"
+    DEPLOY RESTCONF/NAPALM PATH MUTATION: "no ip mtu" + "ip tcp adjust-mss 1360"
+ELSE
+    PRINT "[+] STATE VERIFIED: OSPF Path is Structurally Sound."
+END IF
+```
+
+### 🛡️ Idempotent Design Rules
+The automated remediation utility (`napalm_healing_engine.py`) enforces strict production idempotency:
+1. **Pass 1 (Remediation):** Scans the backbone text, flags configuration drift, and applies the candidate fix.
+2. **Pass 2 (Verification):** Re-interrogates the network immediately after. Because parameters match target constraints, the script bypasses all write operations and cleanly returns an exit code of `0`.
