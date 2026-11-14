@@ -14,6 +14,10 @@ An enterprise-grade data center transit backbone built within Cisco Modeling Lab
 | **05_Chaos_Engineering_Injections** | Fault modeling, interface MTU degradation simulations, and algorithmic self-healing triggers. |
 | **06_Packet_Analysis_Telemetry** | Decrypted packet capturing, diagnostic Wireshark configurations, and low-level protocol tracking profiles. |
 | **07_Configuration_Matrices** | Weekly production state delta documentation, 20-Node topology interface references, and configuration snapshots. |
+| **08_Ansible_Playbook_Idempotency** | Declarative Ansible playbooks, Jinja2 templates, and idempotent state verification for enterprise topologies. |
+| **09_Netbox_IPAM_Source_Of_Truth** | Dynamic inventory synchronization, prefix allocation, and API-driven Source of Truth models via NetBox. |
+| **10_SD_WAN_SDA_Overlay_State_Audit** | Programmatic control-plane/data-plane telemetry, BFD tunnel health checks, and VXLAN/LISP fabric audits. |
+| **11_Enterprise_Security_Compliance_Blueprints** | Automated AAA, CoPP, RBAC, and CIS benchmark compliance auditing across enterprise IOS-XE infrastructure. |
 | **Assets** | Authoritative 20-Node dual-stack IPAM reference network document matrix sheet. |
 
 ## 💥 Chaos Engineering Objective: The OSPF MTU "Silent Killer"

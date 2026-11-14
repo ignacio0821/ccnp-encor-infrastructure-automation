@@ -7,6 +7,7 @@ import sys
 from napalm import get_network_driver
 import yaml
 
+
 def main():
     print("[*] Initializing Remediation Framework...")
 
@@ -31,8 +32,8 @@ def main():
         optional_args={
             "secret": node["secret"],
             # CRITICAL BYPASS: Forces Paramiko to allow legacy DH-Group14-SHA1 key exchanges
-            "disabled_algorithms": {"kex": []}
-        }
+            "disabled_algorithms": {"kex": []},
+        },
     )
 
     # 3. Connect to the device and execute state verification gates
@@ -55,13 +56,16 @@ def main():
 
         # Parse the raw text data directly for protocol state markers
         if "EXSTART" in ospf_table.upper() or "EXCHANGE" in ospf_table.upper():
-            print("[🚨 CHAOS DETECTED] Control plane lock found inside the CLI output strings!")
+            print(
+                "[🚨 CHAOS DETECTED] Control plane lock found inside the CLI output strings!"
+            )
             chaos_detected = True
-
 
         # 4. Remediation Logic Gate
         if chaos_detected:
-            print(f"[*] Compiling atomic correction payload for interface {node['interface']}...")
+            print(
+                f"[*] Compiling atomic correction payload for interface {node['interface']}..."
+            )
 
             # Build the explicit, targeted IOS interface configuration snippet
             remediation_payload = (
@@ -82,10 +86,14 @@ def main():
             # Commit the change permanently into production running-config
             print("[+] Committing changes! Pushing configuration modifications live...")
             device.commit_config()
-            print(f"[✅ RESOLVED] Interface {node['interface']} successfully updated to MTU {node['correct_mtu']}.")
+            print(
+                f"[✅ RESOLVED] Interface {node['interface']} successfully updated to MTU {node['correct_mtu']}."
+            )
 
         else:
-            print("[✅ CLEAR] All tracked OSPF adjacencies are clean. No action required.")
+            print(
+                "[✅ CLEAR] All tracked OSPF adjacencies are clean. No action required."
+            )
 
     except Exception as e:
         print(f"[CRITICAL ERROR] Execution failed: {e}")
@@ -95,6 +103,7 @@ def main():
         # Guarantee that the SSH management terminal session closes cleanly
         device.close()
         print("[*] SSH connection safely terminated. Engine offline.")
+
 
 if __name__ == "__main__":
     main()

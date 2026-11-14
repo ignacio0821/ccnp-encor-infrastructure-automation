@@ -1,0 +1,19 @@
+repos:
+  - repo: https://github.com/Yelp/detect-secrets
+    rev: v1.5.0
+    hooks:
+      - id: detect-secrets
+        exclude: '.*\.pcapng$|.*\.pcap$'
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: check-yaml
+      - id: check-json
+      - id: detect-private-key
+  - repo: local
+    hooks:
+      - id: python-compileall
+        name: Python Compileall Syntax Check
+        entry: python -m compileall -q .
+        language: system
+        pass_filenames: false

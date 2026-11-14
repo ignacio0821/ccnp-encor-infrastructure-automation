@@ -11,8 +11,7 @@
 # 5) Rigorous testing -- Manual local verification
 
 
-
-# Logical Gates: Pseudocode 
+# Logical Gates: Pseudocode
 # source ip 10.1.1.1 protocol OFPF receives LS Update
 # source ip 10.1.1.1 Destination ip 10.1.1.2 protocol OSPF DB description
 # source ip 10.1.1.2 Destination ip 10.1.1.1 protocol OSPF DB description
@@ -24,13 +23,3 @@
 
 # OSPF-1 ADJ Gi0/0 2.2.2.2 address 10.1.1.2 is dead, state DOWN
 # Nbr 2.2.2.2 on GigabithEthernet0/0 EXSTART to DOWN, Neighbor to DOWN: Too many retransmissions
-
-
-
-
-
-
-
-
-
-
